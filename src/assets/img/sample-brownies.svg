@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Illustration of brownies on parchment">
+  <rect width="800" height="800" fill="#f3e6df"/>
+  <!-- tray -->
+  <rect x="70" y="90" width="660" height="620" rx="34" fill="#b9a49a"/>
+  <rect x="92" y="112" width="616" height="576" rx="22" fill="#efe8e2"/>
+  <!-- parchment folds -->
+  <path d="M110 130 L690 130 L690 670 L110 670 Z" fill="#f8f4ef"/>
+  <path d="M110 130 L150 170 M690 130 L650 170" stroke="#e3d9cf" stroke-width="4"/>
+  <!-- brownies: 3 x 3 grid -->
+  <defs><g id="b">
+    <rect width="160" height="150" rx="14" fill="#5a3426"/>
+    <rect width="160" height="34" rx="14" fill="#6e4232"/>
+    <path d="M22 60 q18 -10 36 0 t36 0 t36 0" stroke="#7d4d3a" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M30 100 q22 -9 44 0 t44 0" stroke="#7d4d3a" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <circle cx="120" cy="118" r="7" fill="#3f2219"/>
+    <circle cx="44" cy="128" r="6" fill="#3f2219"/>
+  </g></defs>
+  <use href="#b" x="140" y="175"/>
+  <use href="#b" x="320" y="175"/>
+  <use href="#b" x="500" y="175"/>
+  <use href="#b" x="140" y="345"/>
+  <use href="#b" x="320" y="345"/>
+  <use href="#b" x="500" y="345"/>
+  <use href="#b" x="140" y="515"/>
+  <use href="#b" x="320" y="515"/>
+  <use href="#b" x="500" y="515"/>
+</svg>

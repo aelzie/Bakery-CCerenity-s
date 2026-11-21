@@ -15,7 +15,10 @@ pageClass: about
   <div class="wrap">
     <div class="owner">
       {% if story.ownerPhoto %}
-        <img src="{{ story.ownerPhoto }}" alt="{{ story.ownerName }}" width="320" height="320" loading="lazy">
+        <div class="owner-photo{% if story.ownerPhotoSample %} is-sample{% endif %}">
+          <img src="{{ story.ownerPhoto }}" alt="{{ story.ownerPhotoAlt or story.ownerName }}" width="320" height="320" loading="lazy">
+          {% if story.ownerPhotoSample %}<span class="sample-label">Sample image</span>{% endif %}
+        </div>
       {% else %}
         <div class="photo-placeholder owner-placeholder" role="img" aria-label="Owner photo placeholder"><span>[[PHOTO: owner / baker]]</span></div>
       {% endif %}
@@ -28,7 +31,7 @@ pageClass: about
       <li>
         <p class="timeline-when">{{ t.when }}</p>
         <div class="timeline-card">
-          {% if t.photo %}<img src="{{ t.photo }}" alt="" loading="lazy" width="480" height="320">{% endif %}
+          {% if t.photo %}<img src="{{ t.photo }}" alt="{{ t.photoAlt or '' }}" loading="lazy" width="800" height="800">{% endif %}
           <h3>{{ t.title }}</h3>
           <p>{{ t.text }}</p>
         </div>

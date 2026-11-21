@@ -52,6 +52,11 @@ description: Cookies, cupcakes and treats from CCerenity's — prices, allergens
     <h2 class="section-title" id="custom-title">Custom orders</h2>
     <p>{{ menu.custom.blurb }}</p>
     <p><strong>{{ menu.custom.startingAt }}</strong> · {{ menu.custom.leadTimeNote }}</p>
+    {% if menu.custom.items.length %}
+    <div class="card-grid custom-grid">
+      {% for item in menu.custom.items %}{% include "partials/item-card.njk" %}{% endfor %}
+    </div>
+    {% endif %}
     <a class="btn btn-primary" href="/order/#custom">Start a custom request</a>
   </section>
 </div>

@@ -59,32 +59,14 @@ description: Request cookies, cupcakes or a custom order from CCerenity's. Pleas
       <p class="hint">Enter how many of each. Leave at 0 for anything you don't want.</p>
       {% for cat in menu.categories %}
         <h3 class="form-cat">{{ cat.name }}</h3>
-        {% for item in cat.items %}
-          <div class="qty-row">
-            <span class="qty-name" id="qn-{{ item.id }}">{{ item.name }}</span>
-            <label class="qty-field">
-              <span class="visually-hidden">{{ item.name }} quantity</span>
-              <input type="number" name="{{ item.name }} — quantity" min="0" max="50" value="0" inputmode="numeric" aria-describedby="qn-{{ item.id }}">
-            </label>
-            {% if item.prices.length > 1 %}
-            <label class="qty-size">
-              <span class="visually-hidden">{{ item.name }} size</span>
-              <select name="{{ item.name }} — size" aria-describedby="qn-{{ item.id }}">
-                {% for p in item.prices %}<option>{{ p.label }}</option>{% endfor %}
-              </select>
-            </label>
-            {% else %}
-              <input type="hidden" name="{{ item.name }} — size" value="{{ item.prices[0].label }}">
-              <span class="qty-unit">{{ item.prices[0].label }}</span>
-            {% endif %}
-          </div>
-        {% endfor %}
+        {% for item in cat.items %}{% include "partials/qty-row.njk" %}{% endfor %}
       {% endfor %}
     </fieldset>
 
     <fieldset id="custom">
       <legend>3. Custom order (optional)</legend>
       <p class="hint">{{ menu.custom.blurb }} {{ menu.custom.leadTimeNote }}</p>
+      {% for item in menu.custom.items %}{% include "partials/qty-row.njk" %}{% endfor %}
       <div class="field">
         <label for="f-occasion">Occasion</label>
         <input id="f-occasion" name="occasion" type="text" placeholder="Birthday, shower, office treat…">

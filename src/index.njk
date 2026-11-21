@@ -16,7 +16,7 @@ pageClass: home
     </div>
     <div class="hero-art">
       {% if site.heroImage %}
-        <img src="{{ site.heroImage }}" alt="{{ site.name }} treats" width="340" height="340">
+        <img src="{{ site.heroImage }}" alt="{{ site.heroAlt or (site.name + ' treats') }}" width="340" height="340">
       {% else %}
         <div class="photo-placeholder hero-placeholder" role="img" aria-label="Hero photo placeholder"><span>[[PHOTO: hero — your best treat shot, or your logo]]</span></div>
       {% endif %}

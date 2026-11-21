@@ -1,8 +1,9 @@
 {# expects: item, menu #}
 <article class="item-card" data-contains="{{ item.contains | join(' ') }}" data-dietary="{{ item.dietary | join(' ') }}">
-  <div class="item-photo">
+  <div class="item-photo{% if item.sample %} is-sample{% endif %}">
     {% if item.photo %}
-      <img src="{{ item.photo }}" alt="{{ item.name }}" loading="lazy" width="600" height="600">
+      <img src="{{ item.photo }}" alt="{{ item.photoAlt or item.name }}" loading="lazy" width="800" height="800">
+      {% if item.sample %}<span class="sample-label">Sample image</span>{% endif %}
     {% else %}
       <div class="photo-placeholder" role="img" aria-label="Photo placeholder"><span>[[PHOTO: {{ item.id }}]]</span></div>
     {% endif %}

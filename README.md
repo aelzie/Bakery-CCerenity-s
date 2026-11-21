@@ -52,6 +52,20 @@ It lists every placeholder and the page it's on, and flags dead `#` links, `exam
 
 The form doesn't send anything when you're previewing on your computer. It only works on the live Netlify site.
 
+## Photos
+
+| File | Source |
+|---|---|
+| `logo.jpg`, `cookies-chocolate-chip.jpg`, `cookies-cinnamon-sugar.jpg`, `cupcake-frosted.jpg`, `cookie-dough-tray.jpg` | CCerenity's own Instagram posts (@ccerenitys) |
+| `owner.jpg` | Provided by the site builder |
+| `vanilla-cupcake-sample.jpg` | Pixabay #10404169 (AI-generated), Pixabay Content License |
+| `biscoff-cookie-sample.jpg` | Pixabay #2735336 (speculoos photo), Pixabay Content License |
+| `strawberry-cookie-sample.jpg` | Pixabay #7742778, Pixabay Content License |
+| `strawberry-cupcake-sample.jpg` | Pixabay #352475, Pixabay Content License |
+| `sample-brownies.svg` | Original illustration |
+
+Items marked `"sample": true` in `menu.json` show their photo grayed out with a "Sample image" label. When you have a real photo, replace the file (or the path) and set `"sample": false`.
+
 ## Design notes
 
 - Colors come from the CCerenity's logo (blush, coral, cocoa). Text colors meet WCAG AA contrast.

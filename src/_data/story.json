@@ -3,15 +3,43 @@
   "headline": "Every treat tells a story",
   "intro": "At CCerenity's, every treat tells a story — one baked with love, creativity, and a dash of nostalgia. What began as a simple passion for homemade treats in a Fort Wayne kitchen has blossomed into a local favorite for those who crave sweetness with heart. Come taste the difference that love (and a little serenity) can make.",
   "ownerName": "[[OWNER NAME — or remove]]",
-  "ownerPhoto": null,
+  "ownerPhoto": "/assets/img/owner.jpg",
   "timeline": [
-    { "when": "[[YEAR]]", "title": "A Fort Wayne kitchen", "text": "It started as a simple passion for homemade treats, baked for family and friends.", "photo": null },
-    { "when": "[[YEAR / MOMENT]]", "title": "[[FIRST ORDERS]]", "text": "[[1–2 SENTENCES]]", "photo": null },
-    { "when": "Now", "title": "Baked to order", "text": "From classic flavors to bold new creations, each batch is crafted by hand with the finest ingredients and a whole lot of care.", "photo": null }
+    {
+      "when": "[[YEAR]]",
+      "title": "A Fort Wayne kitchen",
+      "text": "It started as a simple passion for homemade treats, baked for family and friends.",
+      "photo": "/assets/img/cupcake-frosted.jpg",
+      "photoAlt": "A cupcake topped with swirls of piped frosting"
+    },
+    {
+      "when": "[[YEAR / MOMENT]]",
+      "title": "[[FIRST ORDERS]]",
+      "text": "[[1–2 SENTENCES]]",
+      "photo": null
+    },
+    {
+      "when": "Now",
+      "title": "Baked to order",
+      "text": "From classic flavors to bold new creations, each batch is crafted by hand with the finest ingredients and a whole lot of care.",
+      "photo": "/assets/img/cookie-dough-tray.jpg",
+      "photoAlt": "Cookie dough portioned on a baking sheet, ready for the oven"
+    }
   ],
   "values": [
-    { "title": "Made from scratch", "text": "Every treat is made by hand, from scratch, using time-honored techniques." },
-    { "title": "The finest ingredients", "text": "Simple, quality ingredients baked for the perfect balance of flavor and texture." },
-    { "title": "Treats that bring people together", "text": "Treats should do more than satisfy a sweet tooth — they should spark joy and make every occasion unforgettable." }
-  ]
+    {
+      "title": "Made from scratch",
+      "text": "Every treat is made by hand, from scratch, using time-honored techniques."
+    },
+    {
+      "title": "The finest ingredients",
+      "text": "Simple, quality ingredients baked for the perfect balance of flavor and texture."
+    },
+    {
+      "title": "Treats that bring people together",
+      "text": "Treats should do more than satisfy a sweet tooth — they should spark joy and make every occasion unforgettable."
+    }
+  ],
+  "ownerPhotoAlt": "The baker behind CCerenity's",
+  "ownerPhotoSample": false
 }

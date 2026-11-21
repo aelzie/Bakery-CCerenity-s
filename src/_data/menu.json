@@ -1,6 +1,5 @@
 {
-  "_readme": "Menu items. 'contains' uses the keys in 'allergens' below; 'dietary' uses the keys in 'dietary'. The allergen tags here are GUESSES for layout only — confirm every one, then set allergensConfirmed to true in site.json. 'featured: true' shows the item on the home page. 'photo' is a path under src/assets/img/ (leave null to show a placeholder tile).",
-
+  "_readme": "Menu items. 'contains' uses the keys in 'allergens' below; 'dietary' uses the keys in 'dietary'. The allergen tags here are GUESSES for layout only — confirm every one, then set allergensConfirmed to true in site.json. 'featured: true' shows the item on the home page. 'photo' is a path under src/assets/img/ (leave null to show a placeholder tile). Set 'sample: true' on an item to show its photo grayed out with a 'Sample image' label (for stand-in or AI images).",
   "allergens": {
     "wheat": "Wheat / gluten",
     "milk": "Milk / dairy",
@@ -9,12 +8,10 @@
     "peanuts": "Peanuts",
     "soy": "Soy"
   },
-
   "dietary": {
     "vegan": "Vegan",
     "gluten-free": "Gluten-free"
   },
-
   "categories": [
     {
       "id": "cookies",
@@ -22,46 +19,108 @@
       "blurb": "[[SHORT LINE ABOUT YOUR COOKIES e.g. Sold by the half dozen and dozen.]]",
       "items": [
         {
-          "id": "cookie-1",
-          "name": "[[COOKIE 1 NAME e.g. Chocolate Chip]]",
-          "description": "[[COOKIE 1 DESCRIPTION]]",
+          "id": "chocolate-chip-cookie",
+          "name": "Chocolate Chip Cookie",
+          "description": "[[CHOCOLATE CHIP COOKIE DESCRIPTION — 1 short sentence]]",
           "prices": [
-            { "label": "Half dozen", "amount": "[[PRICE]]" },
-            { "label": "Dozen", "amount": "[[PRICE]]" }
+            {
+              "label": "Half dozen",
+              "amount": "[[PRICE]]"
+            },
+            {
+              "label": "Dozen",
+              "amount": "[[PRICE]]"
+            }
           ],
-          "contains": ["wheat", "milk", "egg", "soy"],
+          "contains": [
+            "wheat",
+            "milk",
+            "egg",
+            "soy"
+          ],
           "dietary": [],
           "badge": null,
           "featured": true,
-          "photo": null
+          "photo": "/assets/img/cookies-chocolate-chip.jpg",
+          "photoAlt": "A tray of freshly baked chocolate chip cookies"
         },
         {
-          "id": "cookie-2",
-          "name": "[[COOKIE 2 NAME]]",
-          "description": "[[COOKIE 2 DESCRIPTION]]",
+          "id": "sugar-cookie",
+          "name": "Sugar Cookie",
+          "description": "[[SUGAR COOKIE DESCRIPTION — 1 short sentence]]",
           "prices": [
-            { "label": "Half dozen", "amount": "[[PRICE]]" },
-            { "label": "Dozen", "amount": "[[PRICE]]" }
+            {
+              "label": "Half dozen",
+              "amount": "[[PRICE]]"
+            },
+            {
+              "label": "Dozen",
+              "amount": "[[PRICE]]"
+            }
           ],
-          "contains": ["wheat", "milk", "egg"],
+          "contains": [
+            "wheat",
+            "milk",
+            "egg"
+          ],
           "dietary": [],
           "badge": null,
           "featured": true,
-          "photo": null
+          "photo": "/assets/img/cookies-cinnamon-sugar.jpg",
+          "photoAlt": "A tray of sugar cookies with crackled, sugar-dusted tops"
         },
         {
-          "id": "cookie-3",
-          "name": "[[COOKIE 3 NAME]]",
-          "description": "[[COOKIE 3 DESCRIPTION]]",
+          "id": "biscoff-cookie",
+          "name": "Biscoff Cookie",
+          "description": "[[BISCOFF COOKIE DESCRIPTION — 1 short sentence]]",
           "prices": [
-            { "label": "Half dozen", "amount": "[[PRICE]]" },
-            { "label": "Dozen", "amount": "[[PRICE]]" }
+            {
+              "label": "Half dozen",
+              "amount": "[[PRICE]]"
+            },
+            {
+              "label": "Dozen",
+              "amount": "[[PRICE]]"
+            }
           ],
-          "contains": ["wheat", "milk", "egg", "nuts"],
+          "contains": [
+            "wheat",
+            "milk",
+            "egg",
+            "soy"
+          ],
           "dietary": [],
-          "badge": "[[BADGE e.g. Seasonal]]",
+          "badge": null,
+          "featured": true,
+          "photo": "/assets/img/biscoff-cookie-sample.jpg",
+          "photoAlt": "Sample photo of speculoos-style spiced cookies",
+          "sample": true
+        },
+        {
+          "id": "strawberry-cookie",
+          "name": "Strawberry Cookie",
+          "description": "[[STRAWBERRY COOKIE DESCRIPTION — 1 short sentence]]",
+          "prices": [
+            {
+              "label": "Half dozen",
+              "amount": "[[PRICE]]"
+            },
+            {
+              "label": "Dozen",
+              "amount": "[[PRICE]]"
+            }
+          ],
+          "contains": [
+            "wheat",
+            "milk",
+            "egg"
+          ],
+          "dietary": [],
+          "badge": null,
           "featured": false,
-          "photo": null
+          "photo": "/assets/img/strawberry-cookie-sample.jpg",
+          "photoAlt": "Sample image of pink strawberry cookies with fresh strawberries",
+          "sample": true
         }
       ]
     },
@@ -71,58 +130,88 @@
       "blurb": "[[SHORT LINE ABOUT YOUR CUPCAKES e.g. Sold by the half dozen and dozen.]]",
       "items": [
         {
-          "id": "cupcake-1",
-          "name": "[[CUPCAKE 1 NAME]]",
-          "description": "[[CUPCAKE 1 DESCRIPTION]]",
+          "id": "vanilla-cupcake",
+          "name": "Vanilla Cupcake",
+          "description": "[[VANILLA CUPCAKE DESCRIPTION — 1 short sentence]]",
           "prices": [
-            { "label": "Half dozen", "amount": "[[PRICE]]" },
-            { "label": "Dozen", "amount": "[[PRICE]]" }
+            {
+              "label": "Half dozen",
+              "amount": "[[PRICE]]"
+            },
+            {
+              "label": "Dozen",
+              "amount": "[[PRICE]]"
+            }
           ],
-          "contains": ["wheat", "milk", "egg"],
+          "contains": [
+            "wheat",
+            "milk",
+            "egg"
+          ],
+          "dietary": [],
+          "badge": null,
+          "featured": false,
+          "photo": "/assets/img/vanilla-cupcake-sample.jpg",
+          "photoAlt": "Sample image of a vanilla cupcake with cream frosting",
+          "sample": true
+        },
+        {
+          "id": "strawberry-cupcake",
+          "name": "Strawberry Cupcake",
+          "description": "[[STRAWBERRY CUPCAKE DESCRIPTION — 1 short sentence]]",
+          "prices": [
+            {
+              "label": "Half dozen",
+              "amount": "[[PRICE]]"
+            },
+            {
+              "label": "Dozen",
+              "amount": "[[PRICE]]"
+            }
+          ],
+          "contains": [
+            "wheat",
+            "milk",
+            "egg"
+          ],
           "dietary": [],
           "badge": null,
           "featured": true,
-          "photo": null
-        },
-        {
-          "id": "cupcake-2",
-          "name": "[[CUPCAKE 2 NAME]]",
-          "description": "[[CUPCAKE 2 DESCRIPTION]]",
-          "prices": [
-            { "label": "Half dozen", "amount": "[[PRICE]]" },
-            { "label": "Dozen", "amount": "[[PRICE]]" }
-          ],
-          "contains": ["wheat", "milk", "egg"],
-          "dietary": [],
-          "badge": null,
-          "featured": false,
-          "photo": null
-        }
-      ]
-    },
-    {
-      "id": "other",
-      "name": "[[THIRD CATEGORY e.g. Brownies & Bars — or delete this block]]",
-      "blurb": "[[SHORT LINE]]",
-      "items": [
-        {
-          "id": "other-1",
-          "name": "[[ITEM NAME]]",
-          "description": "[[ITEM DESCRIPTION]]",
-          "prices": [{ "label": "Each", "amount": "[[PRICE]]" }],
-          "contains": ["wheat", "milk", "egg"],
-          "dietary": [],
-          "badge": null,
-          "featured": false,
-          "photo": null
+          "photo": "/assets/img/strawberry-cupcake-sample.jpg",
+          "photoAlt": "Sample photo of small cupcakes topped with cream and sliced strawberries",
+          "sample": true
         }
       ]
     }
   ],
-
   "custom": {
-    "blurb": "[[WHAT CUSTOM ORDERS YOU TAKE e.g. Birthday cupcakes in your colors, cookie trays for parties, bulk orders for events.]]",
+    "blurb": "Want something that isn't on the menu? We take custom orders for parties and events, like brownies. Tell us what you have in mind.",
     "startingAt": "[[STARTING PRICE OR 'Priced by request']]",
-    "leadTimeNote": "[[CUSTOM LEAD TIME e.g. 1 week for orders over 4 dozen]]"
+    "leadTimeNote": "[[CUSTOM LEAD TIME e.g. 1 week for orders over 4 dozen]]",
+    "items": [
+      {
+        "id": "brownies",
+        "name": "Brownies",
+        "description": "One example of what we can make by request. Tell us how many and any flavors or add-ins you'd like.",
+        "prices": [
+          {
+            "label": "Custom order",
+            "amount": "Priced by request"
+          }
+        ],
+        "contains": [
+          "wheat",
+          "milk",
+          "egg",
+          "soy"
+        ],
+        "dietary": [],
+        "badge": null,
+        "featured": false,
+        "photo": "/assets/img/sample-brownies.svg",
+        "photoAlt": "Sample illustration of brownies",
+        "sample": true
+      }
+    ]
   }
 }

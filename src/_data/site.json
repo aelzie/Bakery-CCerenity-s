@@ -22,8 +22,8 @@
     "dmUrl": "https://ig.me/m/ccerenitys"
   },
 
-  "email": "contact@ccerenitys.com",
-  "_emailNote": "From the earlier site. As of 2026-11-21 the domain ccerenitys.com has no mail (MX) records, so this address will bounce until the domain is registered with email set up. Use a working address (e.g. a Gmail) if not.",
+  "email": "sierraupchurch72@gmail.com",
+  "_emailNote": "Owner's email, shown publicly on the site (footer, Pickup & Contact). Also use it for Netlify order-form notifications. If you later register ccerenitys.com with email, you can switch to contact@ccerenitys.com.",
   "phone": "[[PHONE NUMBER e.g. (260) 555-0100]]",
   "phoneHref": "[[PHONE DIGITS e.g. +12605550100]]",
 

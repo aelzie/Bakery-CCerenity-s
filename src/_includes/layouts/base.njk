@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {% endif %}{{ site.name }} — Homemade treats in {{ site.city }}, {{ site.region }}</title>
+  <meta name="description" content="{{ description or (site.name + ' bakes cookies, cupcakes and treats to order in ' + site.city + ', ' + site.region + '. Order at least ' + site.leadTimeLabel + ' ahead.') }}">
+  <meta name="theme-color" content="#fbe9e4">
+  <link rel="preload" href="/assets/fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/nunito-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  {% if site.logo %}
+  <link rel="icon" href="{{ site.logo }}">
+  <link rel="apple-touch-icon" href="{{ site.logo }}">
+  {% else %}
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  {% endif %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": {{ site.name | json | safe }},
+    "description": {{ site.tagline | json | safe }},
+    "areaServed": { "@type": "City", "name": "{{ site.city }}, {{ site.region }}" },
+    "address": { "@type": "PostalAddress", "addressLocality": {{ site.city | json | safe }}, "addressRegion": {{ site.region | json | safe }}, "addressCountry": "US" },
+    "sameAs": [{{ site.instagram.profileUrl | json | safe }}]
+  }
+  </script>
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body class="page-{{ pageClass or 'default' }}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include "partials/header.njk" %}
+  <main id="main">
+    {{ content | safe }}
+  </main>
+  {% include "partials/footer.njk" %}
+</body>
+</html>

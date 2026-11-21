@@ -1,0 +1,50 @@
+---
+layout: layouts/base.njk
+title: Pickup & Contact
+pageClass: contact
+description: How pickup works at CCerenity's, payment, delivery, and how to reach us.
+---
+<section class="page-head">
+  <div class="wrap">
+    <h1>Pickup &amp; contact</h1>
+    <p>We're a home bakery, so every order is made fresh for you. Here's how pickup works.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div class="info-card">
+      <h2>Pickup</h2>
+      <dl class="info-list">
+        <dt>Where</dt><dd>{{ site.pickup.area }}<br><span class="muted">{{ site.pickup.addressNote }}</span></dd>
+        <dt>When</dt><dd>{{ site.pickup.windows }}</dd>
+        <dt>Lead time</dt><dd>At least {{ site.leadTimeLabel }} before pickup</dd>
+        <dt>Delivery</dt><dd>{{ site.pickup.deliveryOffered }}</dd>
+        <dt>Payment</dt><dd>{{ site.payment }}</dd>
+      </dl>
+    </div>
+    <div class="info-card">
+      <h2>Get in touch</h2>
+      <ul class="contact-list">
+        <li><a class="btn btn-primary btn-block" href="{{ site.instagram.dmUrl }}" rel="noopener">Message us on Instagram</a></li>
+        <li><a class="btn btn-ghost btn-block" href="/order/">Use the order form</a></li>
+        <li><a class="btn btn-ghost btn-block" href="mailto:{{ site.email }}">Email {{ site.email }}</a></li>
+        <li><a class="btn btn-ghost btn-block" href="tel:{{ site.phoneHref }}">Call or text {{ site.phone }}</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap narrow">
+    <h2 class="section-title">Questions</h2>
+    <div class="faq">
+      {% for f in faq %}
+      <details>
+        <summary>{{ f.q }}</summary>
+        <p>{{ f.a }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>

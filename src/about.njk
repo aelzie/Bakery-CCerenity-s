@@ -1,0 +1,52 @@
+---
+layout: layouts/base.njk
+title: About
+pageClass: about
+---
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">{{ site.brandPhrase }}</p>
+    <h1>{{ story.headline }}</h1>
+    <p class="lead">{{ story.intro }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="owner">
+      {% if story.ownerPhoto %}
+        <img src="{{ story.ownerPhoto }}" alt="{{ story.ownerName }}" width="320" height="320" loading="lazy">
+      {% else %}
+        <div class="photo-placeholder owner-placeholder" role="img" aria-label="Owner photo placeholder"><span>[[PHOTO: owner / baker]]</span></div>
+      {% endif %}
+      <p class="owner-name">{{ story.ownerName }}</p>
+    </div>
+
+    <h2 class="section-title">How we got here</h2>
+    <ol class="timeline">
+      {% for t in story.timeline %}
+      <li>
+        <p class="timeline-when">{{ t.when }}</p>
+        <div class="timeline-card">
+          {% if t.photo %}<img src="{{ t.photo }}" alt="" loading="lazy" width="480" height="320">{% endif %}
+          <h3>{{ t.title }}</h3>
+          <p>{{ t.text }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <h2 class="section-title">What we care about</h2>
+    <ul class="values">
+      {% for v in story.values %}<li><h3>{{ v.title }}</h3><p>{{ v.text }}</p></li>{% endfor %}
+    </ul>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/order/">Request an order</a>
+      <a class="btn btn-ghost" href="{{ site.instagram.profileUrl }}" rel="noopener">Follow @{{ site.instagram.handle }}</a>
+    </div>
+  </div>
+</section>

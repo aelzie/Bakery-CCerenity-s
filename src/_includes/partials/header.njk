@@ -1,0 +1,20 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="{{ site.name }} home">
+      {% if site.logo %}
+        <img class="brand-logo" src="{{ site.logo }}" alt="" width="48" height="48">
+      {% else %}
+        <span class="brand-mark" aria-hidden="true">CC</span>
+      {% endif %}
+      <span class="brand-name">{{ site.name }}</span>
+    </a>
+    <a class="btn btn-primary btn-sm header-order" href="/order/">Order</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        {% for item in site.nav %}
+          <li><a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

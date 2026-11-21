@@ -1,0 +1,24 @@
+{# expects: item, menu #}
+<article class="item-card" data-contains="{{ item.contains | join(' ') }}" data-dietary="{{ item.dietary | join(' ') }}">
+  <div class="item-photo">
+    {% if item.photo %}
+      <img src="{{ item.photo }}" alt="{{ item.name }}" loading="lazy" width="600" height="600">
+    {% else %}
+      <div class="photo-placeholder" role="img" aria-label="Photo placeholder"><span>[[PHOTO: {{ item.id }}]]</span></div>
+    {% endif %}
+    {% if item.badge %}<span class="badge">{{ item.badge }}</span>{% endif %}
+  </div>
+  <div class="item-body">
+    <h3 class="item-name">{{ item.name }}</h3>
+    <p class="item-desc">{{ item.description }}</p>
+    <ul class="item-prices">
+      {% for p in item.prices %}<li><span>{{ p.label }}</span> <strong>{{ p.amount | money }}</strong></li>{% endfor %}
+    </ul>
+    {% if item.contains.length or item.dietary.length %}
+    <ul class="tags" aria-label="Allergens and dietary info">
+      {% for d in item.dietary %}<li class="tag tag-diet">{{ menu.dietary[d] }}</li>{% endfor %}
+      {% for a in item.contains %}<li class="tag">Contains {{ menu.allergens[a] | lower }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</article>

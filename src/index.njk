@@ -1,0 +1,76 @@
+---
+layout: layouts/base.njk
+pageClass: home
+---
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">{{ site.brandPhrase }}</p>
+      <h1>{{ site.tagline }}</h1>
+      <p class="hero-sub">Cookies, cupcakes and sweet treats made in small batches. Order at least <strong>{{ site.leadTimeLabel }}</strong> ahead and pick up in {{ site.city }}.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/order/">Request an order</a>
+        <a class="btn btn-ghost" href="/menu/">See the menu</a>
+      </div>
+      <p class="hero-dm">Rather message? <a href="{{ site.instagram.dmUrl }}" rel="noopener">DM us on Instagram</a></p>
+    </div>
+    <div class="hero-art">
+      {% if site.heroImage %}
+        <img src="{{ site.heroImage }}" alt="{{ site.name }} treats" width="340" height="340">
+      {% else %}
+        <div class="photo-placeholder hero-placeholder" role="img" aria-label="Hero photo placeholder"><span>[[PHOTO: hero — your best treat shot, or your logo]]</span></div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="scallop" aria-hidden="true"></div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-title">How ordering works</h2>
+    <ol class="steps">
+      <li><span class="step-num">1</span><h3>Pick your treats</h3><p>Browse the <a href="/menu/">menu</a> or dream up something custom.</p></li>
+      <li><span class="step-num">2</span><h3>Send a request</h3><p>Use the <a href="/order/">order form</a> or <a href="{{ site.instagram.dmUrl }}" rel="noopener">DM us</a> at least {{ site.leadTimeLabel }} before you need them.</p></li>
+      <li><span class="step-num">3</span><h3>We confirm</h3><p>We'll reply with your total and pickup time. {{ site.payment }}</p></li>
+      <li><span class="step-num">4</span><h3>Pick up &amp; enjoy</h3><p>Pickup in {{ site.pickup.area }}. <a href="/contact/">Pickup details</a></p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Favorites</h2>
+      <a class="link-arrow" href="/menu/">Full menu</a>
+    </div>
+    <div class="card-grid">
+      {% for cat in menu.categories %}{% for item in cat.items %}{% if item.featured %}
+        {% include "partials/item-card.njk" %}
+      {% endif %}{% endfor %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div>
+      <h2 class="section-title">Something special?</h2>
+      <p>{{ menu.custom.blurb }}</p>
+      <p><strong>{{ menu.custom.startingAt }}</strong> · {{ menu.custom.leadTimeNote }}</p>
+      <a class="btn btn-primary" href="/order/#custom">Ask about a custom order</a>
+    </div>
+    <div>
+      <h2 class="section-title">Our story</h2>
+      <p>{{ story.intro }}</p>
+      <a class="link-arrow" href="/about/">Read more</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint insta-cta">
+  <div class="wrap">
+    <h2 class="section-title">See what's fresh</h2>
+    <p>New bakes and specials go up on Instagram first.</p>
+    <a class="btn btn-ghost" href="{{ site.instagram.profileUrl }}" rel="noopener">Follow @{{ site.instagram.handle }}</a>
+  </div>
+</section>

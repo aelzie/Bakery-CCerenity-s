@@ -1,0 +1,132 @@
+---
+layout: layouts/base.njk
+title: Order
+pageClass: order
+description: Request cookies, cupcakes or a custom order from CCerenity's. Please order at least 72 hours ahead.
+---
+<section class="page-head">
+  <div class="wrap">
+    <h1>Request an order</h1>
+    <p>Fill this out at least <strong>{{ site.leadTimeLabel }}</strong> before you need your treats. It's a request, not a payment. We'll reply to confirm your total and pickup time.</p>
+    <p class="hero-dm">Prefer Instagram? <a href="{{ site.instagram.dmUrl }}" rel="noopener">Send us a DM</a> with the same details.</p>
+  </div>
+</section>
+
+<div class="wrap narrow">
+  {#
+    Netlify Forms: this form starts collecting submissions automatically once the
+    site is deployed on Netlify (Site settings → Forms → enable form detection,
+    then add an email notification). It does nothing when run locally.
+  #}
+  <form class="order-form" name="order" method="POST" action="/order/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="order">
+    <p class="visually-hidden"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+    <fieldset>
+      <legend>1. Your details</legend>
+      <div class="field">
+        <label for="f-name">Name <span class="req">required</span></label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="f-phone">Phone</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email">
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-ig">Instagram handle (optional)</label>
+        <input id="f-ig" name="instagram" type="text" placeholder="@yourname" autocapitalize="off">
+      </div>
+      <div class="field">
+        <span class="label" id="contact-pref">Best way to reach you <span class="req">required</span></span>
+        <div class="radio-row" role="radiogroup" aria-labelledby="contact-pref">
+          <label><input type="radio" name="contact_preference" value="Text" required> Text</label>
+          <label><input type="radio" name="contact_preference" value="Call"> Call</label>
+          <label><input type="radio" name="contact_preference" value="Email"> Email</label>
+          <label><input type="radio" name="contact_preference" value="Instagram DM"> Instagram DM</label>
+        </div>
+        <p class="hint" id="contact-hint">Please give a phone, email or Instagram handle so we can confirm.</p>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. What you'd like</legend>
+      <p class="hint">Enter how many of each. Leave at 0 for anything you don't want.</p>
+      {% for cat in menu.categories %}
+        <h3 class="form-cat">{{ cat.name }}</h3>
+        {% for item in cat.items %}
+          <div class="qty-row">
+            <span class="qty-name" id="qn-{{ item.id }}">{{ item.name }}</span>
+            <label class="qty-field">
+              <span class="visually-hidden">{{ item.name }} quantity</span>
+              <input type="number" name="{{ item.name }} — quantity" min="0" max="50" value="0" inputmode="numeric" aria-describedby="qn-{{ item.id }}">
+            </label>
+            {% if item.prices.length > 1 %}
+            <label class="qty-size">
+              <span class="visually-hidden">{{ item.name }} size</span>
+              <select name="{{ item.name }} — size" aria-describedby="qn-{{ item.id }}">
+                {% for p in item.prices %}<option>{{ p.label }}</option>{% endfor %}
+              </select>
+            </label>
+            {% else %}
+              <input type="hidden" name="{{ item.name }} — size" value="{{ item.prices[0].label }}">
+              <span class="qty-unit">{{ item.prices[0].label }}</span>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endfor %}
+    </fieldset>
+
+    <fieldset id="custom">
+      <legend>3. Custom order (optional)</legend>
+      <p class="hint">{{ menu.custom.blurb }} {{ menu.custom.leadTimeNote }}</p>
+      <div class="field">
+        <label for="f-occasion">Occasion</label>
+        <input id="f-occasion" name="occasion" type="text" placeholder="Birthday, shower, office treat…">
+      </div>
+      <div class="field">
+        <label for="f-custom">Describe what you have in mind</label>
+        <textarea id="f-custom" name="custom_details" rows="4" placeholder="Flavors, colors, theme, how many people…"></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Pickup</legend>
+      <div class="field-row">
+        <div class="field">
+          <label for="f-date">Pickup date <span class="req">required</span></label>
+          <input id="f-date" name="pickup_date" type="date" required aria-describedby="date-hint">
+          <p class="hint" id="date-hint">Earliest date is {{ site.leadTimeLabel }} from today.</p>
+        </div>
+        <div class="field">
+          <label for="f-time">Preferred time</label>
+          <input id="f-time" name="pickup_time" type="text" placeholder="e.g. after 4 pm">
+        </div>
+      </div>
+      <p class="hint">Pickup in {{ site.pickup.area }} · {{ site.pickup.windows }}. {{ site.pickup.deliveryOffered }}</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>5. Anything else</legend>
+      <div class="field">
+        <label for="f-allergies">Allergies we should know about</label>
+        <textarea id="f-allergies" name="allergies" rows="2"></textarea>
+      </div>
+      <div class="field">
+        <label for="f-notes">Notes</label>
+        <textarea id="f-notes" name="notes" rows="3"></textarea>
+      </div>
+      <div class="field">
+        <label class="check"><input type="checkbox" name="understands_request" value="yes" required> I understand this is a request. My order is confirmed once {{ site.name }} replies.</label>
+      </div>
+    </fieldset>
+
+    <p class="form-error" id="form-error" role="alert" hidden></p>
+    <button class="btn btn-primary btn-lg" type="submit">Send order request</button>
+  </form>
+</div>

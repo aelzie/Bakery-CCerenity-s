@@ -1,0 +1,128 @@
+{
+  "_readme": "Menu items. 'contains' uses the keys in 'allergens' below; 'dietary' uses the keys in 'dietary'. The allergen tags here are GUESSES for layout only — confirm every one, then set allergensConfirmed to true in site.json. 'featured: true' shows the item on the home page. 'photo' is a path under src/assets/img/ (leave null to show a placeholder tile).",
+
+  "allergens": {
+    "wheat": "Wheat / gluten",
+    "milk": "Milk / dairy",
+    "egg": "Egg",
+    "nuts": "Tree nuts",
+    "peanuts": "Peanuts",
+    "soy": "Soy"
+  },
+
+  "dietary": {
+    "vegan": "Vegan",
+    "gluten-free": "Gluten-free"
+  },
+
+  "categories": [
+    {
+      "id": "cookies",
+      "name": "Cookies",
+      "blurb": "[[SHORT LINE ABOUT YOUR COOKIES e.g. Sold by the half dozen and dozen.]]",
+      "items": [
+        {
+          "id": "cookie-1",
+          "name": "[[COOKIE 1 NAME e.g. Chocolate Chip]]",
+          "description": "[[COOKIE 1 DESCRIPTION]]",
+          "prices": [
+            { "label": "Half dozen", "amount": "[[PRICE]]" },
+            { "label": "Dozen", "amount": "[[PRICE]]" }
+          ],
+          "contains": ["wheat", "milk", "egg", "soy"],
+          "dietary": [],
+          "badge": null,
+          "featured": true,
+          "photo": null
+        },
+        {
+          "id": "cookie-2",
+          "name": "[[COOKIE 2 NAME]]",
+          "description": "[[COOKIE 2 DESCRIPTION]]",
+          "prices": [
+            { "label": "Half dozen", "amount": "[[PRICE]]" },
+            { "label": "Dozen", "amount": "[[PRICE]]" }
+          ],
+          "contains": ["wheat", "milk", "egg"],
+          "dietary": [],
+          "badge": null,
+          "featured": true,
+          "photo": null
+        },
+        {
+          "id": "cookie-3",
+          "name": "[[COOKIE 3 NAME]]",
+          "description": "[[COOKIE 3 DESCRIPTION]]",
+          "prices": [
+            { "label": "Half dozen", "amount": "[[PRICE]]" },
+            { "label": "Dozen", "amount": "[[PRICE]]" }
+          ],
+          "contains": ["wheat", "milk", "egg", "nuts"],
+          "dietary": [],
+          "badge": "[[BADGE e.g. Seasonal]]",
+          "featured": false,
+          "photo": null
+        }
+      ]
+    },
+    {
+      "id": "cupcakes",
+      "name": "Cupcakes",
+      "blurb": "[[SHORT LINE ABOUT YOUR CUPCAKES e.g. Sold by the half dozen and dozen.]]",
+      "items": [
+        {
+          "id": "cupcake-1",
+          "name": "[[CUPCAKE 1 NAME]]",
+          "description": "[[CUPCAKE 1 DESCRIPTION]]",
+          "prices": [
+            { "label": "Half dozen", "amount": "[[PRICE]]" },
+            { "label": "Dozen", "amount": "[[PRICE]]" }
+          ],
+          "contains": ["wheat", "milk", "egg"],
+          "dietary": [],
+          "badge": null,
+          "featured": true,
+          "photo": null
+        },
+        {
+          "id": "cupcake-2",
+          "name": "[[CUPCAKE 2 NAME]]",
+          "description": "[[CUPCAKE 2 DESCRIPTION]]",
+          "prices": [
+            { "label": "Half dozen", "amount": "[[PRICE]]" },
+            { "label": "Dozen", "amount": "[[PRICE]]" }
+          ],
+          "contains": ["wheat", "milk", "egg"],
+          "dietary": [],
+          "badge": null,
+          "featured": false,
+          "photo": null
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "[[THIRD CATEGORY e.g. Brownies & Bars — or delete this block]]",
+      "blurb": "[[SHORT LINE]]",
+      "items": [
+        {
+          "id": "other-1",
+          "name": "[[ITEM NAME]]",
+          "description": "[[ITEM DESCRIPTION]]",
+          "prices": [{ "label": "Each", "amount": "[[PRICE]]" }],
+          "contains": ["wheat", "milk", "egg"],
+          "dietary": [],
+          "badge": null,
+          "featured": false,
+          "photo": null
+        }
+      ]
+    }
+  ],
+
+  "custom": {
+    "blurb": "[[WHAT CUSTOM ORDERS YOU TAKE e.g. Birthday cupcakes in your colors, cookie trays for parties, bulk orders for events.]]",
+    "startingAt": "[[STARTING PRICE OR 'Priced by request']]",
+    "leadTimeNote": "[[CUSTOM LEAD TIME e.g. 1 week for orders over 4 dozen]]"
+  }
+}

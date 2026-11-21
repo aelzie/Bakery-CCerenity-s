@@ -1,0 +1,57 @@
+---
+layout: layouts/base.njk
+title: Menu
+pageClass: menu
+description: Cookies, cupcakes and treats from CCerenity's — prices, allergens, and how to order.
+---
+<section class="page-head">
+  <div class="wrap">
+    <h1>Menu</h1>
+    <p>Everything is baked to order. Order at least <strong>{{ site.leadTimeLabel }}</strong> ahead.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/order/">Request an order</a>
+      <a class="btn btn-ghost" href="{{ site.instagram.dmUrl }}" rel="noopener">DM to order</a>
+    </div>
+  </div>
+</section>
+
+<nav class="jump-bar" aria-label="Menu categories">
+  <ul class="wrap">
+    {% for cat in menu.categories %}<li><a href="#{{ cat.id }}">{{ cat.name }}</a></li>{% endfor %}
+    <li><a href="#custom">Custom orders</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+  {% if not site.allergensConfirmed %}
+  <p class="notice" role="note">[[ALLERGEN TAGS NOT CONFIRMED — check every item in menu.json, then set allergensConfirmed to true in site.json]]</p>
+  {% endif %}
+
+  <form class="filters" id="allergen-filter" aria-labelledby="filter-title" hidden>
+    <p id="filter-title" class="filters-title">Hide items that contain:</p>
+    <div class="chips">
+      {% for key, label in menu.allergens %}
+        <label class="chip"><input type="checkbox" name="exclude" value="{{ key }}"> {{ label }}</label>
+      {% endfor %}
+    </div>
+    <p class="filters-status" aria-live="polite"></p>
+  </form>
+  <p class="fine-print">Our kitchen handles wheat, milk, eggs, nuts and more. Tags show what's in a recipe, not that it's free of cross-contact.</p>
+
+  {% for cat in menu.categories %}
+  <section class="menu-section" id="{{ cat.id }}" aria-labelledby="{{ cat.id }}-title">
+    <h2 class="section-title" id="{{ cat.id }}-title">{{ cat.name }}</h2>
+    <p class="muted">{{ cat.blurb }}</p>
+    <div class="card-grid">
+      {% for item in cat.items %}{% include "partials/item-card.njk" %}{% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+
+  <section class="menu-section custom-box" id="custom" aria-labelledby="custom-title">
+    <h2 class="section-title" id="custom-title">Custom orders</h2>
+    <p>{{ menu.custom.blurb }}</p>
+    <p><strong>{{ menu.custom.startingAt }}</strong> · {{ menu.custom.leadTimeNote }}</p>
+    <a class="btn btn-primary" href="/order/#custom">Start a custom request</a>
+  </section>
+</div>

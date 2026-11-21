@@ -1,0 +1,8 @@
+[
+  { "q": "How far ahead do I need to order?", "a": "At least 72 hours before pickup. Bigger or custom orders may need more time — we'll let you know when we confirm." },
+  { "q": "How do I pay?", "a": "[[PAYMENT ANSWER e.g. Cash, Venmo, or Cash App at pickup.]]" },
+  { "q": "Where do I pick up?", "a": "[[PICKUP ANSWER e.g. Northeast Fort Wayne. We send the exact address when we confirm your order.]]" },
+  { "q": "Do you deliver?", "a": "[[DELIVERY ANSWER]]" },
+  { "q": "Can you work around allergies?", "a": "[[ALLERGY ANSWER e.g. Tell us in the order notes. Our kitchen also handles wheat, milk, eggs, and nuts, so we can't promise zero cross-contact.]]" },
+  { "q": "Is my order confirmed when I submit the form?", "a": "Not yet — the form is a request. We'll reach out to confirm details, price, and pickup time." }
+]

@@ -1,0 +1,17 @@
+{
+  "_readme": "About page content. Replace each [[PLACEHOLDER]]. Add or remove timeline entries freely. 'photo' is a path under src/assets/img/ or null.",
+  "headline": "[[ABOUT HEADLINE e.g. Baked at home, shared with Fort Wayne]]",
+  "intro": "[[2–3 SENTENCES: who you are, why you bake, what makes your treats yours]]",
+  "ownerName": "[[OWNER NAME — or remove]]",
+  "ownerPhoto": null,
+  "timeline": [
+    { "when": "[[YEAR / MOMENT]]", "title": "[[HOW IT STARTED]]", "text": "[[1–2 SENTENCES]]", "photo": null },
+    { "when": "[[YEAR / MOMENT]]", "title": "[[FIRST ORDERS]]", "text": "[[1–2 SENTENCES]]", "photo": null },
+    { "when": "Now", "title": "[[WHERE YOU ARE TODAY]]", "text": "[[1–2 SENTENCES]]", "photo": null }
+  ],
+  "values": [
+    { "title": "[[VALUE 1 e.g. Small batches]]", "text": "[[ONE SENTENCE]]" },
+    { "title": "[[VALUE 2 e.g. Baked to order]]", "text": "[[ONE SENTENCE]]" },
+    { "title": "[[VALUE 3 e.g. Real ingredients]]", "text": "[[ONE SENTENCE]]" }
+  ]
+}

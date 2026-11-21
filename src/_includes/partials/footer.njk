@@ -1,0 +1,32 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      {% if site.logo %}<img class="footer-logo" src="{{ site.logo }}" alt="{{ site.name }} logo" width="96" height="96" loading="lazy">{% endif %}
+      <p class="footer-brand">{{ site.name }}</p>
+      <p>{{ site.brandPhrase }} — homemade treats in {{ site.city }}, {{ site.region }}.</p>
+      <p class="lead-pill">Order at least {{ site.leadTimeLabel }} ahead</p>
+    </div>
+    <div>
+      <h2 class="footer-h">Pickup</h2>
+      <p>{{ site.pickup.area }}<br>{{ site.pickup.windows }}</p>
+      <p class="muted">{{ site.pickup.addressNote }}</p>
+    </div>
+    <div>
+      <h2 class="footer-h">Get in touch</h2>
+      <ul class="plain">
+        <li><a href="{{ site.instagram.dmUrl }}" rel="noopener">Message us on Instagram</a></li>
+        <li><a href="{{ site.instagram.profileUrl }}" rel="noopener">@{{ site.instagram.handle }}</a></li>
+        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <li><a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-h">Pages</h2>
+      <ul class="plain">
+        {% for item in site.nav %}<li><a href="{{ item.url }}">{{ item.label }}</a></li>{% endfor %}
+        <li><a href="/order/">Order</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="wrap copyright">© {% year %} {{ site.name }}. All treats homemade in {{ site.city }}.</p>
+</footer>

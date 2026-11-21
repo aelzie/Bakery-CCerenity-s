@@ -1,0 +1,45 @@
+{
+  "_readme": "All business details live here. Anything in [[DOUBLE BRACKETS]] is a placeholder — replace it with real info. Run `npm run build:check` to list what's left.",
+
+  "name": "CCerenity's",
+  "tagline": "Homemade treats, baked to order in Fort Wayne",
+  "brandPhrase": "Taste of CCerenity",
+  "url": "[[SITE URL e.g. https://ccerenitys.com]]",
+  "logo": "/assets/img/logo.jpg",
+  "_logoNote": "logo.jpg is the Instagram profile picture (150x150). If you have the original, higher-resolution file, replace src/assets/img/logo.jpg with it (or a .png/.svg and update this path).",
+  "heroImage": null,
+  "_heroNote": "Big image on the home page. Set to e.g. \"/assets/img/hero.jpg\" (square, ~1000px). A treat photo or a high-resolution logo both work.",
+  "city": "Fort Wayne",
+  "region": "IN",
+
+  "leadTimeHours": 72,
+  "leadTimeLabel": "72 hours",
+
+  "instagram": {
+    "handle": "ccerenitys",
+    "profileUrl": "https://www.instagram.com/ccerenitys/",
+    "dmUrl": "https://ig.me/m/ccerenitys"
+  },
+
+  "email": "[[EMAIL ADDRESS]]",
+  "phone": "[[PHONE NUMBER e.g. (260) 555-0100]]",
+  "phoneHref": "[[PHONE DIGITS e.g. +12605550100]]",
+
+  "pickup": {
+    "area": "[[PICKUP AREA e.g. Northeast Fort Wayne]]",
+    "addressNote": "The exact pickup address is sent with your order confirmation.",
+    "windows": "[[PICKUP DAYS & TIMES e.g. Fri–Sun, 10 am – 6 pm]]",
+    "deliveryOffered": "[[DELIVERY? e.g. 'Local delivery within 5 miles for $5' or 'Pickup only']]"
+  },
+
+  "payment": "[[PAYMENT METHODS e.g. Cash, Venmo, Cash App — paid at pickup]]",
+
+  "allergensConfirmed": false,
+
+  "nav": [
+    { "label": "Home", "url": "/" },
+    { "label": "Menu", "url": "/menu/" },
+    { "label": "About", "url": "/about/" },
+    { "label": "Pickup & Contact", "url": "/contact/" }
+  ]
+}
